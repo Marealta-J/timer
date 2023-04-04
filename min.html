@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обратный отсчет</title>
+</head>
+<body>
+    <style>@import url(https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap);.countdown,.time,body{display:flex}*{box-sizing:border-box}body{background-position:top center;height:100vh;color:#000;font-family:Rubik,sans-serif;flex-direction:column;align-items:center;justify-content:center;text-align:center;margin:0;overflow:hidden}.year{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:200px;line-height:1;z-index:-1;opacity:.2}.countdown{user-select:none;align-items:center;justify-content:center}.time{flex-direction:column;align-items:center;justify-content:center;margin:30px}.time h2{margin:0 0 10px;font-size:48px}.time small{font-size:26px}@media (max-width:500px){.year{display:none}.countdown{align-items:center}.time{margin:10px}.time h2{font-size:32px;margin:0}.time small{font-size:16px}}</style>
+    <div class="countdown" id="countdown"><div class="time"><h2 id="days">00</h2><small>дней</small></div><div class="time"><h2 id="hours">00</h2><small>часов</small></div><div class="time"><h2 id="minutes">00</h2><small>минут</small></div><div class="time"><h2 id="seconds">00</h2><small>секунд</small></div></div>
+    <script type="text/javascript" charset="UTF-8">
+        const days=document.querySelector("#days"),hours=document.querySelector("#hours"),minutes=document.querySelector("#minutes"),seconds=document.querySelector("#seconds"),currentYear=new Date().getFullYear(),nextDate=new Date(`April 07 ${currentYear} 23:59:59`);function updateCounter(){let e=new Date,r=nextDate-e,$=Math.floor(r/1e3/60/60)%24,n=Math.floor(r/1e3/60)%60,t=Math.floor(r/1e3)%60;days.innerText=Math.floor(r/1e3/60/60/24),hours.innerText=$<10?"0"+$:$,minutes.innerText=n<10?"0"+n:n,seconds.innerText=t<10?"0"+t:t}updateCounter(),setInterval(updateCounter,1e3);
+    </script>
+</body>
+</html>
