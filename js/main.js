@@ -10,7 +10,7 @@ const seconds = document.querySelector('#seconds');
 
 // Делаем расчеты
 const currentYear = new Date().getFullYear(); // Текущий год
-const nextDate = new Date(`April 17 ${currentYear} 05:32:30`);
+const nextDate = new Date(`November 06 ${currentYear} 05:32:30`);
 
 function updateCounter() {
 	const currentTime = new Date(); //Определение текущей даты
